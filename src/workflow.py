@@ -76,7 +76,9 @@ async def run_agent_workflow_async(
     }
     last_message_cnt = 0
     async for s in graph.astream(
-        input=initial_state, config=config, stream_mode="values"
+        input=initial_state,
+        config=config,
+        stream_mode="values"
     ):
         try:
             if isinstance(s, dict) and "messages" in s:

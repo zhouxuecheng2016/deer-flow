@@ -230,9 +230,7 @@ def coordinator_node(
             for tool_call in response.tool_calls:
                 if tool_call.get("name", "") != "handoff_to_planner":
                     continue
-                if tool_call.get("args", {}).get("locale") and tool_call.get(
-                    "args", {}
-                ).get("research_topic"):
+                if tool_call.get("args", {}).get("locale") and tool_call.get("args", {}).get("research_topic"):
                     locale = tool_call.get("args", {}).get("locale")
                     research_topic = tool_call.get("args", {}).get("research_topic")
                     break
